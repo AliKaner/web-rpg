@@ -12,24 +12,24 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { api } from "api";
 import { IUser } from "api/models/IUser";
-import { login } from "api/routes/session";
+import { register } from "api/routes/session";
 
 import { ChangeEvent, useState } from "react";
 
-export default function Login() {
+export default function Register() {
   const [show, setShow] = useState(false);
-  const [user,setUser] = useState<IUser>({password:'',username:''});
-  
   const handleClick = () => setShow(!show);
-  
-  const handleOnChange = (e:ChangeEvent<HTMLInputElement>) => {
-    setUser(prevUser =>({...prevUser,[e.target.name]:e.target.value}))
-  }
+  const [user, setUser] = useState<IUser>({ password: "", username: "" });
 
-  const  onSentRegister = async() => {
-    await login(user)
-  }
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setUser((prevUser) => ({ ...prevUser, [e.target.name]: e.target.value }));
+  };
+
+  const onSentRegister = async () => {
+    await register(user);
+  };
 
   return (
     <Flex
@@ -42,9 +42,9 @@ export default function Login() {
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Heading fontSize={"4xl"}>LOG IN</Heading>
+          <Heading fontSize={"4xl"}>Register</Heading>
           <Text fontSize={"lg"} color={"#144272"}>
-            Greetings Fellow Traveller
+            Raise Fellow Traveller
           </Text>
         </Stack>
         <Box
@@ -56,30 +56,39 @@ export default function Login() {
         >
           <Stack spacing={4}>
             <FormControl id="username">
-              <FormLabel>Username</FormLabel>
-              <Input type="username" isInvalid errorBorderColor="#293462" />
+              <FormLabel>Traveller Name</FormLabel>
+              <Input
+                type="text"
+                isInvalid
+                errorBorderColor="#293462"
+                placeholder="traveller"
+                name="username"
+                value={user.username}
+                onChange={handleOnChange}
+              />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password" isInvalid errorBorderColor="#293462" />
+              <Input
+                type="password"
+                isInvalid
+                errorBorderColor="#293462"
+                placeholder="password"
+                name="password"
+                value={user.password}
+                onChange={handleOnChange}
+              />
             </FormControl>
             <Stack spacing={4}>
-              <Stack
-                direction={{ base: "column", sm: "row" }}
-                align={"start"}
-                justify={"space-between"}
-              >
-                <Checkbox colorScheme="#293462">Remember me</Checkbox>
-                <Link color={"#293462"}>Forgot password?</Link>
-              </Stack>
               <Button
                 bg={"#144272"}
                 color={"white"}
                 _hover={{
                   bg: "#2B62B3",
                 }}
+                onClick={onSentRegister}
               >
-                LOG IN
+                REGISTER
               </Button>
             </Stack>
           </Stack>
