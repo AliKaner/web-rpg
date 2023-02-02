@@ -1,6 +1,6 @@
-import{FC} from 'react'
-import{Text,Box} from '@chakra-ui/react'
-import { IStoryBox } from './stroy_box_model'
+import{FC} from 'react';
+import{Text,Box} from '@chakra-ui/react';
+import { IStoryBox } from './IStoryBox';
 
 export const StoryBox:FC<IStoryBox>=({
 texts,

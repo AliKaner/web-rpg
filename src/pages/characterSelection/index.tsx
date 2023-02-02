@@ -1,4 +1,4 @@
-import { Grid,Box,Text, color, Center} from "@chakra-ui/react";
+import { Grid,Box,Text, color, Center, Flex, background} from "@chakra-ui/react";
 import { FC,useEffect,useState } from "react";
 import { IHero } from "api/models/IHero";
 import HeroCard from "components/HeroCard";
@@ -20,7 +20,7 @@ export default function CharacterSelection() {
         getHeros();
     })
     
-    const erdeminGötü: IHero[]= [
+    const data: IHero[]= [
         {
             name:' wqeqwe',
             stats:{
@@ -34,7 +34,7 @@ export default function CharacterSelection() {
         {
             name:' wqeqwe',
             stats:{
-                def:10,
+                def:4,
                 atk:10,
                 hp:10,
             },
@@ -44,29 +44,35 @@ export default function CharacterSelection() {
         {
             name:' wqeqwe',
             stats:{
-                def:10,
+                def:7,
                 atk:10,
                 hp:10,
             },
             img:'https://i1.sndcdn.com/artworks-000190299555-vimz9r-t500x500.jpg',
             desc:'adkapsokdpaskdmpasdmapmd'
-        }
+        },
     ]
      return(
-        <Box alignContent={'center'} width={'100%'} height={'100%'} bgColor={'red'}>
-            <Center>
-                <Text>
-                    
-                </Text>
-            </Center>
-        <Grid templateColumns='repeat(5, 1fr)' gap={6}>
-        {
-            erdeminGötü.map((hero)=> (
-                <HeroCard 
-                 {...hero}/>
-            ))
-        }
-        </Grid>
-        </Box>
+        <div className="page" style={{display:'flex',flexDirection:'row',backgroundColor:'#778da9',height:'100vh'}}>
+            <div style={{flex:'1'}}></div>
+            <div style={{display:'flex',flexDirection:'column', flex:'2',gap:40}}>
+                <div style={{
+                    flex:'1',
+                    textAlign:'center',
+                    border: '1px #778da9 solid',
+                    boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
+                    borderRadius:'20px',
+                    padding:'10px',
+                    marginTop:'50px',
+                    backgroundColor:'#415a77'
+                    }}>
+                    <h1>Character Selection</h1>
+                </div>
+                <div style={{ flex:'15',display:'flex',flexDirection:'row',gap:20}}>
+                    {heroList.map((hero)=> (<HeroCard {...hero}/>))}
+                </div>
+            </div>
+            <div style={{flex:'1'}}></div>
+        </div>
     )
 }
