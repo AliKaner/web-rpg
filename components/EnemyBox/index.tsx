@@ -6,20 +6,18 @@ import { GiBroadsword, GiAbdominalArmor, GiHeartPlus } from "react-icons/gi";
 import StatElement from "components/StatElement";
 import { StatType } from "components/StatElement/IStatElement";
 
-const EnemyBox: FC<IEnemyBox> = ({
-  enemy,
-}) => {
+const EnemyBox: FC<IEnemyBox> = ({ enemy }) => {
   return (
-    <div style={{
-      display:'flex',
-      flexDirection:'column',
-    }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <div>
-        <image/>
+        <image />
       </div>
-      <div>
-       
-      </div>
+      <div></div>
     </div>
   );
 };

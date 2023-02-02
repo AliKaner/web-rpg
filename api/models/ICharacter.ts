@@ -5,5 +5,5 @@ export interface ICharacter {
   gold: number;
   level: number;
   exp: number;
-  stat:IStat
+  stat: IStat;
 }

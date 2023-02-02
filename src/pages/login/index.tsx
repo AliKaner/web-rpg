@@ -19,17 +19,17 @@ import { ChangeEvent, useState } from "react";
 
 export default function Login() {
   const [show, setShow] = useState(false);
-  const [user,setUser] = useState<IUser>({password:'',username:''});
-  
-  const handleClick = () => setShow(!show);
-  
-  const handleOnChange = (e:ChangeEvent<HTMLInputElement>) => {
-    setUser(prevUser =>({...prevUser,[e.target.name]:e.target.value}))
-  }
+  const [user, setUser] = useState<IUser>({ password: "", username: "" });
 
-  const  onSentRegister = async() => {
-    await login(user)
-  }
+  const handleClick = () => setShow(!show);
+
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setUser((prevUser) => ({ ...prevUser, [e.target.name]: e.target.value }));
+  };
+
+  const onSentRegister = async () => {
+    await login(user);
+  };
 
   return (
     <Flex
