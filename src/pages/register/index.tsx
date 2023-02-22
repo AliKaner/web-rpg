@@ -12,9 +12,9 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { api } from "api";
-import { IUser } from "api/models/IUser";
-import { register } from "api/routes/session";
+import { api } from "@/api";
+import { IUser } from "@/api/models/IUser";
+import { register } from "@/api/routes/session";
 
 import { ChangeEvent, useState } from "react";
 

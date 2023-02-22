@@ -1,5 +1,5 @@
-import { api } from "api";
-import { IUser } from "api/models/IUser";
+import { api } from "@/api";
+import { IUser } from "@/api/models/IUser";
 
 export const register = async (user: IUser) => {
   const response = await api.post("/user/register", user);

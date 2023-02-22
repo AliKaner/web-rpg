@@ -1,6 +1,6 @@
 import{FC} from 'react';
 import{Text,Box} from '@chakra-ui/react';
-import { IStoryBox } from './IStoryBox';
+import { IStoryBox } from '../../types/story.type';
 
 export const StoryBox:FC<IStoryBox>=({
 texts,

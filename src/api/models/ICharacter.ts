@@ -1,4 +1,4 @@
-import { IStat } from "api/models/IStat";
+import { IStat } from "@/api/models/IStat";
 
 export interface ICharacter {
   name: string;
