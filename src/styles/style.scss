@@ -10,13 +10,14 @@ $secondary-color: #383633,;
     border-radius: 20px;
     padding: 10px;
     background-color: $primary-color;
-    flex: 1;
+    width: 400px;
+
     gap:10;
     &:hover {
         box-shadow: 0 0 10px 5px rgba(248, 244, 11, 0.5);
         background-color: $secondary-color;
-        transform: scale(1.05);
-        transition: box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
+        transform: scale(1.24);
+        transition: box-shadow 0.9s ease-in-out, background-color 0.9s ease-in-out transform 0.9s ease-in-out;
       }
 }
 
@@ -31,18 +32,26 @@ $secondary-color: #383633,;
 }
 
 .statElementContainer {
+    font-size:4rem;
+    flex:1;
     display:flex;
     text-align: center;
     gap: 2px;
-    flex-direction:row;
+    flex-direction:column;
     align-items:center;
+    margin-bottom: 10px;
 }
-
+.CheroardTitle {
+    flex:1;
+    text-align: center;
+    font-size: 30px;
+}
 .page {
     display: flex;
     flex-direction: column;
     background-color: $secondary-color;
     height: 100vh;
+    width: 100vw;
 }
 
 .game {
@@ -53,27 +62,36 @@ $secondary-color: #383633,;
     font-family: 'MedievalSharp', cursive;
     display: flex;
     flex-direction:column;
-    flex: 2;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
     gap: 20px;
 }
 .characterSelectionPageTitle {
-    flex: 10;
     color:white;
     text-align: center;
     border: 1px $secondary-color solid;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10px;
-    padding: 30px;
+    padding: 30px 0;
+    font-size: 50px;
     margin-top: 30px;
     background-color: $primary-color;
+}
+.heroCardStatContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
 }
 
 .characterSelectionPageHeroCardsContainer {
     color:white;
     flex: 12;
+    gap:20px;
     display: flex;
-    flex-direction: space-evenly;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 .flexOne {
     flex: 1;

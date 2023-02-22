@@ -28,13 +28,10 @@ const StatElement: FC<IStatElement> = ({ type,amount}) => {
 
   return (
     <div className="statElementContainer">
-      <div>{statElementStyle.icon}</div>
-      <div>
-        <Progress value={amount * 5} size={"sm"} colorScheme={statElementStyle.color} width={'580px'} />
-      </div>
       <div >
         <Text textAlign={'right'}>{`${amount}`}</Text>
       </div>
+      <div>{statElementStyle.icon}</div>
     </div>
   );
 };

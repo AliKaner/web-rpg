@@ -20,20 +20,17 @@ export default function CharacterSelection() {
   },[]);
 
   return (
-    <div
-      className="page">
+    <div className="page">
       <div className="characterSelectionPageContentContainer">
         <div className="characterSelectionPageTitle">
           <h1>Character Selection</h1>
         </div>
-        <div className="flexThree"></div>
         <div className="characterSelectionPageHeroCardsContainer">
           {heroList.map((heroList) => (
             <HeroCard {...heroList} />
           ))}
         </div>
       </div>
-      <div className="flexOne"></div>
     </div>
   );
 }
