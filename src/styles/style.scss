@@ -13,11 +13,11 @@ $secondary-color: #383633,;
     width: 400px;
 
     gap:10;
+    transition: all 0.3s ease-in-out;
     &:hover {
         box-shadow: 0 0 10px 5px rgba(248, 244, 11, 0.5);
         background-color: $secondary-color;
-        transform: scale(1.24);
-        transition: box-shadow 0.9s ease-in-out, background-color 0.9s ease-in-out transform 0.9s ease-in-out;
+        transform: scale(1.05);
       }
 }
 
