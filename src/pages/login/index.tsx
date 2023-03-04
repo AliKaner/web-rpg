@@ -33,35 +33,44 @@ export default function Login() {
 
   return (
     <Flex
-      bgColor={"#0A2647"}
-      color={"#144272"}
+      bgColor={"#23221E"}
+      color={"#d3af37"}
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      //bg={useColorModeValue('gray.50', 'gray.800')}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"}>LOG IN</Heading>
-          <Text fontSize={"lg"} color={"#144272"}>
+          <Text fontSize={"lg"} color={"#d3af37"}>
             Greetings Fellow Traveller
           </Text>
         </Stack>
         <Box
           color={"white"}
           rounded={"lg"}
-          bg={"#2C74B3"}
-          boxShadow={"lg"}
+          bg={"#23221E"}
+          boxShadow={"outline"}
           p={8}
         >
           <Stack spacing={4}>
             <FormControl id="username">
               <FormLabel>Username</FormLabel>
-              <Input type="username" isInvalid errorBorderColor="#293462" />
+              <Input
+                type="username"
+                isInvalid
+                errorBorderColor="#383633"
+                focusBorderColor="#d3af37"
+              />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password" isInvalid errorBorderColor="#293462" />
+              <Input
+                type="password"
+                isInvalid
+                errorBorderColor="#383633"
+                focusBorderColor="#d3af37"
+              />
             </FormControl>
             <Stack spacing={4}>
               <Stack
@@ -69,14 +78,14 @@ export default function Login() {
                 align={"start"}
                 justify={"space-between"}
               >
-                <Checkbox colorScheme="#293462">Remember me</Checkbox>
-                <Link color={"#293462"}>Forgot password?</Link>
+                <Checkbox colorScheme="#23221E">Remember me</Checkbox>
+                <Link color={"#23221E"}>Forgot password?</Link>
               </Stack>
               <Button
-                bg={"#144272"}
+                bg={"#383633"}
                 color={"white"}
                 _hover={{
-                  bg: "#2B62B3",
+                  bg: "#d3af37",
                 }}
               >
                 LOG IN

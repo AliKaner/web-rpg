@@ -1,121 +1,195 @@
-$primary-color: #23221E;
-$secondary-color: #383633,;
+$primary-color: #23221e;
+$secondary-color: #383633;
+$character-color:#16a085 ;
+$skill-color: #0077c2;
+$escape-color: #d4af37;
+$story-color:#7f7f7f;
+$attack-color: #e74c3c;
+$enemy-color: #993399;
 
 .heroCardContainer {
-    display: flex;
-    flex-direction: column;
-    border: 1px $secondary-color solid;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    transition: box-shadow 0.3s ease-in-out;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: $primary-color;
-    width: 400px;
+  display: flex;
+  flex-direction: column;
+  border: 1px $secondary-color solid;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: $primary-color;
+  width: 400px;
 
-    gap:10;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-        box-shadow: 0 0 10px 5px rgba(248, 244, 11, 0.5);
-        background-color: $secondary-color;
-        transform: scale(1.05);
-      }
+  gap: 10;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 10px 5px rgba(248, 244, 11, 0.5);
+    background-color: $secondary-color;
+    transform: scale(1.05);
+  }
 }
 
 .enemyBoxContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .playerBoxContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .statElementContainer {
-    font-size:4rem;
-    flex:1;
-    display:flex;
-    text-align: center;
-    gap: 2px;
-    flex-direction:column;
-    align-items:center;
-    margin-bottom: 10px;
+  font-size: 31px;
+  flex: 1;
+  display: flex;
+  text-align: center;
+  gap: 2px;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
 }
-.CheroardTitle {
-    flex:1;
-    text-align: center;
-    font-size: 30px;
+.heroCardTitle {
+  flex: 1;
+  text-align: center;
+  font-size: 30px;
 }
+
 .page {
-    display: flex;
-    flex-direction: column;
-    background-color: $secondary-color;
-    height: 100vh;
-    width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-color;
+  height: 100vh;
+  width: 100vw;
 }
 
-.game {
-    text-align: auto;
+.gamePageContainer{
+  font-family: "MedievalSharp", cursive;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap:10px;
+  width: 1200px;
+  height: 720px;
+
+  .gamePageHeader {
+    flex:1;
+    font-size: 30px;
+    background-color: #383633;
+    align-content: center;
+    text-align: center;
+    color:white;
+    
+  }
+
+  .gamePageScreensContainer {
+    display: flex;
+    gap:15px;
+    flex-direction: row;
+    flex:5;
+    .gamePageEnemyContainer {
+      flex: 1;
+      color: white;
+      text-align: center;
+      border: 1px $secondary-color solid;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 10px;
+      padding: 30px 0;
+      margin-top: 30px;
+      background-color: $enemy-color; 
+    }
+    
+    .gamePageStoryContainer {
+      flex:3;
+      color: white;
+      text-align: center;
+      border: 1px $secondary-color solid;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 10px;
+      padding: 30px 0;
+      margin-top: 30px;
+      background-color: $story-color; 
+    }
+    
+    .gamePagePlayerContainer {
+      flex: 1;
+      color: white;
+      text-align: center;
+      border: 1px $secondary-color solid;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 10px;
+      padding: 30px 0;
+      margin-top: 30px;
+      background-color: $character-color;
+    }
+  }
+
+  .gamePageControlContainer {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:5px;
+    flex:1;
+
+    .attackButton{
+      width: 230px;
+      background-color: $attack-color;
+      &:hover {
+        background-color: #c0392b;
+      }
+    }
+    .skillButton{
+      width: 230px;
+      background-color: $skill-color;
+      &:hover {
+        background-color: #005ea2;
+      }
+    }
+    .escapeButton {
+      width: 230px;
+      background-color: $escape-color;
+      &:hover {
+        background-color: #b38925 ;
+      }
+    }
+  }
+
+
 }
 
-.characterSelectionPageContentContainer{
-    font-family: 'MedievalSharp', cursive;
-    display: flex;
-    flex-direction:column;
-    padding: 0 20px;
-    width: 100%;
-    height: 100%;
-    gap: 20px;
+.characterSelectionPageContentContainer {
+  font-family: "MedievalSharp", cursive;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
 }
 .characterSelectionPageTitle {
-    color:white;
-    text-align: center;
-    border: 1px $secondary-color solid;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 10px;
-    padding: 30px 0;
-    font-size: 50px;
-    margin-top: 30px;
-    background-color: $primary-color;
+  color: white;
+  text-align: center;
+  border: 1px $secondary-color solid;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  padding: 30px 0;
+  font-size: 50px;
+  margin-top: 30px;
+  background-color: $primary-color;
 }
 .heroCardStatContainer {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
 }
 
 .characterSelectionPageHeroCardsContainer {
-    color:white;
-    flex: 12;
-    gap:20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-.flexOne {
-    flex: 1;
+  color: white;
+  flex: 12;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
-.flexTwo {
-    flex: 2;
-}
-
-.flexThree {
-    flex: 3;
-}
-
-.flexFour {
-    flex: 4;
-}
-
-.flexSix {
-    flex: 6;
-}
-
-.flexFull{
-    flex: 12;
-}
-
-
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");

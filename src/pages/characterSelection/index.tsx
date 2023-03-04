@@ -17,7 +17,7 @@ export default function CharacterSelection() {
 
   useEffect(() => {
     getHeross();
-  },[]);
+  }, []);
 
   return (
     <div className="page">

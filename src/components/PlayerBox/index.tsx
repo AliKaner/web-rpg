@@ -1,10 +1,6 @@
 import { IPlayerBox } from "../../types/player.type";
 import { FC } from "react";
-import {
-  IconButton,
-  Heading,
-  Text,
-} from "@chakra-ui/react";
+import { IconButton, Heading, Text } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
 import Stat from "@/components/StatElement";
 import Image from "next/image";
@@ -16,14 +12,15 @@ export const PlayerBox: FC<IPlayerBox> = ({ player }) => {
 
   return (
     <div className="playerBoxContainer">
-      <div className="flexOne">
+      <div className="playerBoxHeader">
         <Heading size="md">{player?.character.name}</Heading>
-        <Text>{player?.character.level}</Text>
       </div>
-      <div>
-       {/*<Image src={player?.img} alt={player?.character.name} />*/}
+      <div>{/*<Image src={player?.img} alt={player?.character.name} />*/}</div>
+      <div className="playerBoxStats">
+        <div>
+          {player?.character.level}
+        </div>
       </div>
-      <div className="playerBoxContainer flexOne"></div>
     </div>
   );
 };

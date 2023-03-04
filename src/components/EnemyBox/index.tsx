@@ -9,10 +9,27 @@ import { StatType } from "@/types/stat.type";
 const EnemyBox: FC<IEnemyBox> = ({ enemy }) => {
   return (
     <div className="enemyBoxContainer">
-      <div>
-        <image />
+      <div className="title">
+        Enemy
       </div>
-      <div></div>
+      <Image
+        src="https://i0.wp.com/dmdavid.com/wp-content/uploads/2022/07/gem_stalker.jpeg"
+        alt={enemy?.name}
+        width={"90%"}
+        height={"0"}
+        style={{ width: "100%", height: "auto" }}
+        />
+      <p className="enemyBoxEnemyName">
+        Katık Canavarı
+      </p>
+      <p className="enemyBoxEnemyDescription">
+        Bu canavar çok fenadır duy da inanma
+      </p>
+      <div className="enemyBoxEnemyStats">
+        <StatElement type={StatType.attack} amount={12} />
+        <StatElement type={StatType.defence} amount={12} />
+        <StatElement type={StatType.health} amount={12} />
+      </div>
     </div>
   );
 };

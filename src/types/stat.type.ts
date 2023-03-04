@@ -1,7 +1,7 @@
 export enum StatType {
     attack = 'ATTACK',
     defence = 'DEFENCE',
-    healt = 'HEALT',
+    health = 'HEALT',
 }
 
 export interface IStatElement {
