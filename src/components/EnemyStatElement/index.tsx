@@ -4,13 +4,13 @@ import { IconType } from "react-icons/lib";
 import { IStatElement, StatType } from "@/types/stat.type";
 import { GiBroadsword, GiAbdominalArmor, GiHeartPlus } from "react-icons/gi";
 
-const StatElement: FC<IStatElement> = ({ type, amount }) => {
+const EnemyStatElement: FC<IStatElement> = ({ type, amount }) => {
   const statElementStyle = useMemo(() => {
+    // TODO: erdekm bir daha bak
     let style: { icon: React.ReactNode; color: string } = {
       icon: null,
       color: "",
     };
-
     switch (type) {
       case StatType.attack:
         style = { icon: <GiBroadsword />, color: "red" };
@@ -26,12 +26,12 @@ const StatElement: FC<IStatElement> = ({ type, amount }) => {
   }, [type]);
 
   return (
-    <div className="statElementContainer">
-      <div>
-        <Text textAlign={"right"}>{`${amount}`}</Text>
-      </div>
-      <div>{statElementStyle.icon}</div>
+    <div className="enemyStatElementContainer">
+        <div>{statElementStyle.icon}</div>
+        <div>
+            <Text textAlign={"right"}>{amount}</Text>
+        </div>
     </div>
   );
 };
-export default StatElement;
+export default EnemyStatElement;

@@ -4,13 +4,13 @@ import { IStoryBox } from "../../types/story.type";
 
 export const StoryBox: FC<IStoryBox> = ({ texts }) => {
   return (
-    <>
+    <div className="storyBoxContainer">
         {texts.map((text) => (
           <>
-            <Text as="i">{text}</Text>
+            <Text>{text}</Text>
             <br />
           </>
         ))}
-    </>
+    </div>
   );
 };

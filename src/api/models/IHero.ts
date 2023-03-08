@@ -5,4 +5,5 @@ export interface IHero {
   stats: IStat;
   desc: string;
   img: string;
+  id: string;
 }

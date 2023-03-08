@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { IHero } from "@/api/models/IHero";
 import HeroCard from "@/components/HeroCard";
-import { getHeros } from "@/api/routes/characterSelection";
+import { addHero, getHeros } from "@/api/routes/characterSelection";
 
 export default function CharacterSelection() {
   const [heroList, setHeroList] = useState<IHero[]>([]);
@@ -15,6 +15,10 @@ export default function CharacterSelection() {
     }
   };
 
+  const postSelectedHero = async (id:string) => {
+    addHero(id,localStorage.getItem("access_token"));
+  };
+
   useEffect(() => {
     getHeross();
   }, []);
@@ -26,8 +30,12 @@ export default function CharacterSelection() {
           <h1>Character Selection</h1>
         </div>
         <div className="characterSelectionPageHeroCardsContainer">
-          {heroList.map((heroList) => (
-            <HeroCard {...heroList} />
+          {heroList.map((hero) => (
+            <HeroCard 
+            hero={hero}
+            onClick= {() =>{
+              postSelectedHero(hero.id);
+            }} />
           ))}
         </div>
       </div>

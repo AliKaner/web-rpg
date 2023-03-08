@@ -3,15 +3,20 @@ import { IEnemy } from "@/api/models/IEnemy";
 import { PlayerBox } from "@/components/PlayerBox";
 import EnemyBox from "@/components/EnemyBox";
 import { IEnemyBox } from "@/types/enemy.type";
-import { StoryBox } from "@/components/StoryWindow";
+import { StoryBox } from "@/components/StoryBox";
 import { IStoryBox } from "@/types/story.type";
 import { useState } from "react";
 import { IPlayer } from "@/api/models/IPlayer";
 import { Button } from "@chakra-ui/react";
 
-const TextData: IStoryBox = {
-  texts: ["lorem 10", "matik", "lorem 10", "matik", "lorem 10", "matik"],
-};
+const texts  = [
+  "Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi", "Katık yedi", "Vurdu gibi oldu ama tabi bilemem kardeş yani nedir bu derdiniz  lan hadi artık kk aday olmasıns", "lorem 10", "matik"
+];
+
+const GameTexts = {
+  title: 
+}
+
 
 export default function Game() {
   const [currentEnemy, setCurrentEnemy] = useState<IEnemy>();
@@ -32,7 +37,7 @@ export default function Game() {
             <EnemyBox enemy={currentEnemy} />
           </div>
           <div className="gamePageStoryContainer">
-            <StoryBox texts={story} />
+            <StoryBox texts={texts} />
           </div>
           <div className="gamePagePlayerContainer">
             <PlayerBox player={player} />

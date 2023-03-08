@@ -11,21 +11,24 @@ import {
 } from "@chakra-ui/react";
 import { api } from "@/api";
 import { IUser } from "@/api/models/IUser";
-import { register } from "@/api/routes/session";
+import { register,getMe} from "@/api/routes/session";
 
 import { ChangeEvent, useState } from "react";
 
 export default function Register() {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
-  const [user, setUser] = useState<IUser>({ password: "", username: "" });
+  const [user, setUser] = useState<IUser>({ password: "", username: "",email:""});
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUser((prevUser) => ({ ...prevUser, [e.target.name]: e.target.value }));
   };
 
   const onSentRegister = async () => {
-    await register(user);
+    const token = await register(user) ;
+    localStorage.setItem("access_token",token)
+    const currentUser = await getMe(token);
+    console.log(currentUser);
   };
 
   return (
@@ -60,6 +63,15 @@ export default function Register() {
                 placeholder="traveller"
                 name="username"
                 value={user.username}
+                onChange={handleOnChange}
+              />
+              <Input
+                type="text"
+                isInvalid
+                errorBorderColor="#293462"
+                placeholder="mail"
+                name="email"
+                value={user.email}
                 onChange={handleOnChange}
               />
             </FormControl>
