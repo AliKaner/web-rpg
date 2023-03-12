@@ -1,9 +1,9 @@
-import { IStat } from "./IStat";
+import { IStats } from "./IStats";
 
 export interface IHero {
   name: string;
-  stats: IStat;
+  stats: IStats;
   desc: string;
   img: string;
-  id: string;
+  _id: string;
 }

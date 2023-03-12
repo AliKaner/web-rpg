@@ -2,9 +2,9 @@ import { Grid, GridItem, Flex } from "@chakra-ui/layout";
 import { IEnemy } from "@/api/models/IEnemy";
 import { PlayerBox } from "@/components/PlayerBox";
 import EnemyBox from "@/components/EnemyBox";
-import { IEnemyBox } from "@/types/enemy.type";
+import { IEnemyBox } from "@/components/EnemyBox/enemyBox.type";
 import { StoryBox } from "@/components/StoryBox";
-import { IStoryBox } from "@/types/story.type";
+import { IStoryBox } from "@/components/StoryBox/storyBox.type";
 import { useState } from "react";
 import { IPlayer } from "@/api/models/IPlayer";
 import { Button } from "@chakra-ui/react";
@@ -12,11 +12,6 @@ import { Button } from "@chakra-ui/react";
 const texts  = [
   "Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi","Oyun Başladı", "Oyuncu oyuna girdi", "Katık yedi", "Vurdu gibi oldu ama tabi bilemem kardeş yani nedir bu derdiniz  lan hadi artık kk aday olmasıns", "lorem 10", "matik"
 ];
-
-const GameTexts = {
-  title: 
-}
-
 
 export default function Game() {
   const [currentEnemy, setCurrentEnemy] = useState<IEnemy>();
@@ -26,27 +21,27 @@ export default function Game() {
   const getGame = async () => {};
   return (
     <div className="page">
-      <div className="gamePageContainer">
+      <div className="gamePage">
         <div className="gamePageHeader">
-          <div className="pageTitle">
+          <div className="gamePageHeaderTitle">
             The Journey Of Bones And Thoughts
           </div>
         </div>
-        <div className="gamePageScreensContainer">
-          <div className="gamePageEnemyContainer">
+        <div className="gamePageContent">
+          <div className="gamePageContentEnemy">
             <EnemyBox enemy={currentEnemy} />
           </div>
-          <div className="gamePageStoryContainer">
+          <div className="gamePageContentStory">
             <StoryBox texts={texts} />
           </div>
-          <div className="gamePagePlayerContainer">
+          <div className="gamePageContentPlayer">
             <PlayerBox player={player} />
           </div>
         </div>
-        <div className="gamePageControlContainer">
-          <Button className="attackButton">Attack</Button>
-          <Button className="skillButton">Skill</Button>
-          <Button className="escapeButton">Escape</Button>
+        <div className="gamePageControl">
+          <Button className="gamePageControlAttackButton">Attack</Button>
+          <Button className="gamePageControlSkillButton">Skill</Button>
+          <Button className="gamePageControlEscapeButton">Escape</Button>
         </div>
       </div>
     </div>

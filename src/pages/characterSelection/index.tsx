@@ -6,6 +6,7 @@ import { addHero, getHeros } from "@/api/routes/characterSelection";
 export default function CharacterSelection() {
   const [heroList, setHeroList] = useState<IHero[]>([]);
 
+  console.log(heroList);
   const getHeross = async () => {
     try {
       const allHeros = await getHeros();
@@ -16,7 +17,7 @@ export default function CharacterSelection() {
   };
 
   const postSelectedHero = async (id:string) => {
-    addHero(id,localStorage.getItem("access_token"));
+    addHero(id);
   };
 
   useEffect(() => {
@@ -25,16 +26,16 @@ export default function CharacterSelection() {
 
   return (
     <div className="page">
-      <div className="characterSelectionPageContentContainer">
-        <div className="characterSelectionPageTitle">
+      <div className="characterSelectionPage">
+        <div className="characterSelectionPageHeader">
           <h1>Character Selection</h1>
         </div>
-        <div className="characterSelectionPageHeroCardsContainer">
+        <div className="characterSelectionPageContent">
           {heroList.map((hero) => (
             <HeroCard 
             hero={hero}
             onClick= {() =>{
-              postSelectedHero(hero.id);
+              postSelectedHero(hero._id);
             }} />
           ))}
         </div>

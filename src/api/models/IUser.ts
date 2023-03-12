@@ -1,5 +1,7 @@
+import { IHero } from "./IHero";
+
 export interface IUser {
   username: string;
   password: string;
-  email:string;
+  hero?:IHero;
 }

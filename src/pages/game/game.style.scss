@@ -1,0 +1,99 @@
+@import "/src/styles/variables.scss";
+
+.gamePage {
+  font-family: "MedievalSharp", cursive;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 10px;
+  width: 80%;
+  height: 720px;
+
+  &Header {
+    flex: 1;
+    font-size: 30px;
+    background-color: #383633;
+    align-content: center;
+    text-align: center;
+    color: white;
+
+    &Title {
+      color: white;
+    }
+  }
+
+  &Content {
+    display: flex;
+    gap: 25px;
+    flex-direction: row;
+    flex: 5;
+
+    &Enemy {
+      flex: 1;
+      color: white;
+      text-align: center;
+      border: 1px $secondary-color solid;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 10px;
+      padding: 30px 0;
+      margin-top: 30px;
+      background-color: $enemy-color;
+    }
+
+    &Story {
+      flex: 3;
+      color: white;
+      text-align: center;
+      border: 1px $secondary-color solid;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 10px;
+      padding: 30px 0;
+      margin-top: 30px;
+      background-color: $story-color;
+    }
+
+    &Player {
+      flex: 1;
+      color: white;
+      text-align: center;
+      border: 1px $secondary-color solid;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 10px;
+      padding: 30px 0;
+      margin-top: 30px;
+      background-color: $character-color;
+    }
+  }
+
+  &Control {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    flex: 1;
+
+    &AttackButton {
+      width: 230px;
+      background-color: $attack-color;
+      &:hover {
+        background-color: #c0392b;
+      }
+    }
+    &SkillButton {
+      width: 230px;
+      background-color: $skill-color;
+      &:hover {
+        background-color: #005ea2;
+      }
+    }
+    &EscapeButton {
+      width: 230px;
+      background-color: $escape-color;
+      &:hover {
+        background-color: #b38925;
+      }
+    }
+  }
+}
+

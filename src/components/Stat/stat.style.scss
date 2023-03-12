@@ -1,0 +1,12 @@
+stat {
+    display: flex;
+    flex-direction: row;
+
+    &Amount {
+        flex:1;
+    }
+
+    &Icon {
+        flex:1;
+    }
+}

@@ -1,0 +1,24 @@
+@import "/src/styles/variables.scss";
+
+.adminPanel {
+    display:flex;
+    flex-direction: column;
+    background-color: $primary-color;
+
+    &SideBar {
+        display: flex;
+        flex-direction: column;
+        flex:1;
+        background-color: $secondary-color;
+    }
+
+    &Content {
+        flex: 6;
+    }   
+}
+
+.header {
+    display:flex;
+    flex-direction: column;
+    background-color: $secondary-color;
+}

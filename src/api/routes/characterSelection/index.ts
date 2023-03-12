@@ -6,9 +6,8 @@ export const getHeros = async (): Promise<IHero[]> => {
   return response.data;
 };
 
-export const addHero = (heroID:string,accessToken?: string|null) => {
+export const addHero = (heroID:string) => {
   api.put("/hero/select", {
     'heroID':heroID,
-    'Authorization':accessToken
   });
 };

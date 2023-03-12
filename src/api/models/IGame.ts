@@ -1,10 +1,10 @@
 import { IEnemy } from "./IEnemy";
-import { IStat } from "./IStat";
+import { IStats } from "./IStats";
 
 export interface IGame {
   story: string[];
   level: number;
-  stats: IStat;
+  stats: IStats;
   enemy: IEnemy;
   gold: number;
   lvlPoint: number;

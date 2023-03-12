@@ -1,107 +1,40 @@
-import {
-  Flex,
-  Box,
-  FormControl,
-  FormLabel,
-  Input,
-  Stack,
-  Button,
-  Heading,
-  Text,
-} from "@chakra-ui/react";
 import { api } from "@/api";
 import { IUser } from "@/api/models/IUser";
-import { register,getMe} from "@/api/routes/session";
-
+import { register, getMe } from "@/api/routes/session";
+import { InputArea } from "@/components/Input";
 import { ChangeEvent, useState } from "react";
+import { SubmitButton } from "@/components/SubmitButton";
+import { SignInTitle } from "@/constants/constants";
+import { Header } from "@/components/Header";
+import { useUser } from "@/contexts/user";
 
 export default function Register() {
-  const [show, setShow] = useState(false);
-  const handleClick = () => setShow(!show);
-  const [user, setUser] = useState<IUser>({ password: "", username: "",email:""});
+  const  {onRegister} = useUser();
+  const [user, setUser] = useState<IUser>({
+    password: "",
+    username: "",
+  });
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUser((prevUser) => ({ ...prevUser, [e.target.name]: e.target.value }));
   };
 
-  const onSentRegister = async () => {
-    const token = await register(user) ;
-    localStorage.setItem("access_token",token)
-    const currentUser = await getMe(token);
-    console.log(currentUser);
-  };
-
   return (
-    <Flex
-      bgColor={"#0A2647"}
-      color={"#144272"}
-      minH={"100vh"}
-      align={"center"}
-      justify={"center"}
-    >
-      <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
-        <Stack align={"center"}>
-          <Heading fontSize={"4xl"}>Register</Heading>
-          <Text fontSize={"lg"} color={"#144272"}>
-            Raise Fellow Traveller
-          </Text>
-        </Stack>
-        <Box
-          color={"white"}
-          rounded={"lg"}
-          bg={"#2C74B3"}
-          boxShadow={"lg"}
-          p={8}
-        >
-          <Stack spacing={4}>
-            <FormControl id="username">
-              <FormLabel>Traveller Name</FormLabel>
-              <Input
-                type="text"
-                isInvalid
-                errorBorderColor="#293462"
-                placeholder="traveller"
-                name="username"
-                value={user.username}
-                onChange={handleOnChange}
-              />
-              <Input
-                type="text"
-                isInvalid
-                errorBorderColor="#293462"
-                placeholder="mail"
-                name="email"
-                value={user.email}
-                onChange={handleOnChange}
-              />
-            </FormControl>
-            <FormControl id="password">
-              <FormLabel>Password</FormLabel>
-              <Input
-                type="password"
-                isInvalid
-                errorBorderColor="#293462"
-                placeholder="password"
-                name="password"
-                value={user.password}
-                onChange={handleOnChange}
-              />
-            </FormControl>
-            <Stack spacing={4}>
-              <Button
-                bg={"#144272"}
-                color={"white"}
-                _hover={{
-                  bg: "#2B62B3",
-                }}
-                onClick={onSentRegister}
-              >
-                REGISTER
-              </Button>
-            </Stack>
-          </Stack>
-        </Box>
-      </Stack>
-    </Flex>
+    <div className="page">
+      <Header title={SignInTitle}/>
+      <div className="form">
+        <InputArea
+          value={user.username}
+          onChange={handleOnChange}
+          type={"username"}
+        />
+        <InputArea
+          value={user.password}
+          onChange={handleOnChange}
+          type={"password"}
+        />
+        <SubmitButton onSubmit={onRegister} text={"submit"} />
+      </div>
+    </div>
   );
 }
